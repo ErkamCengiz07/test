@@ -21,3 +21,5 @@ jobs:
         folder: .  # Dağıtılacak klasör (projenizin kök dizini)
         token: ${{ secrets.GITHUB_TOKEN }}  # GitHub tarafından otomatik sağlanan token
         clean: true  # Önceki dağıtımları temizle
+        clean-exclude: |
+          .nojekyll
