@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+}
+
+.game-area {
+    display: flex;
+    gap: 20px;
+}
+
+#tetris {
+    background-color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.game-info {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.score-container, .level-container, .lines-container, .next-piece-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#score, #level, #lines {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#next-piece {
+    height: 80px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.instructions h2 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.instructions h3 {
+    color: #555;
+    margin: 15px 0 10px;
+}
+
+.instructions ul {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
+
+#start-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-area {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .game-info {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .score-container, .level-container, .lines-container, .next-piece-container {
+        width: calc(50% - 10px);
+    }
+}
