@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Satranç Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Satranç Oyunu</h1>
+        
+        <div class="game-info">
+            <div class="player-info">
+                <div id="player-turn" class="turn-indicator">Beyaz Oynar</div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Bot Zorluk Seviyesi:</label>
+                    <select id="difficulty">
+                        <option value="1">Kolay</option>
+                        <option value="2" selected>Orta</option>
+                        <option value="3">Zor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="new-game">Yeni Oyun</button>
+                <button id="play-as-white">Beyaz Olarak Oyna</button>
+                <button id="play-as-black">Siyah Olarak Oyna</button>
+                <button id="undo-move">Hamleyi Geri Al</button>
+            </div>
+        </div>
+        
+        <div class="board-container">
+            <div id="board"></div>
+        </div>
+        
+        <div class="captured-pieces">
+            <div class="white-captured">
+                <h3>Beyazın Aldığı Taşlar</h3>
+                <div id="white-captured-pieces"></div>
+            </div>
+            <div class="black-captured">
+                <h3>Siyahın Aldığı Taşlar</h3>
+                <div id="black-captured-pieces"></div>
+            </div>
+        </div>
+        
+        <div id="game-status" class="game-status"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
