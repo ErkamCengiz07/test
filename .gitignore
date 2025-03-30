@@ -19,3 +19,15 @@ build/
 # System Files
 .DS_Store
 Thumbs.db
+
+# Chess game specific
+*.pgn
+*.fen
+game_history/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug files
+debug/

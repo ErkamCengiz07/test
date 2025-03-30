@@ -3,56 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris Oyunu</title>
+    <title>Web Satranç Oyunu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="game-area">
-            <div class="game-info">
-                <div class="score-container">
-                    <h3>Puan</h3>
-                    <div id="score">0</div>
-                </div>
-                <div class="level-container">
-                    <h3>Seviye</h3>
-                    <div id="level">1</div>
-                </div>
-                <div class="lines-container">
-                    <h3>Satırlar</h3>
-                    <div id="lines">0</div>
-                </div>
-                <div class="next-piece-container">
-                    <h3>Sonraki Parça</h3>
-                    <div id="next-piece"></div>
+        <h1>Web Satranç Oyunu</h1>
+        
+        <div class="game-info">
+            <div class="player-info">
+                <div id="player-turn" class="turn-indicator">Beyaz Oynar</div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Bot Zorluk Seviyesi:</label>
+                    <select id="difficulty">
+                        <option value="1">Kolay</option>
+                        <option value="2" selected>Orta</option>
+                        <option value="3">Zor</option>
+                    </select>
                 </div>
             </div>
-            <canvas id="tetris" width="240" height="400"></canvas>
+            <div class="buttons">
+                <button id="new-game">Yeni Oyun</button>
+                <button id="play-as-white">Beyaz Olarak Oyna</button>
+                <button id="play-as-black">Siyah Olarak Oyna</button>
+                <button id="undo-move">Hamleyi Geri Al</button>
+            </div>
         </div>
         
-        <div class="instructions">
-            <h2>Nasıl Oynanır?</h2>
-            <p>Tetris, düşen blokları yönlendirerek tam satırlar oluşturmaya çalıştığınız klasik bir oyundur.</p>
-            <h3>Kontroller:</h3>
-            <ul>
-                <li><strong>Sol Ok Tuşu:</strong> Parçayı sola hareket ettirir</li>
-                <li><strong>Sağ Ok Tuşu:</strong> Parçayı sağa hareket ettirir</li>
-                <li><strong>Aşağı Ok Tuşu:</strong> Parçayı hızlıca aşağı indirir</li>
-                <li><strong>Yukarı Ok Tuşu:</strong> Parçayı saat yönünde döndürür</li>
-                <li><strong>Boşluk Tuşu:</strong> Parçayı direkt olarak en aşağıya düşürür</li>
-                <li><strong>P Tuşu:</strong> Oyunu duraklatır/devam ettirir</li>
-            </ul>
-            <h3>Puanlama:</h3>
-            <ul>
-                <li>1 Satır: 100 puan</li>
-                <li>2 Satır: 300 puan</li>
-                <li>3 Satır: 500 puan</li>
-                <li>4 Satır (Tetris): 800 puan</li>
-            </ul>
-            <p>Her 10 satır tamamlandığında seviye yükselir ve oyun hızlanır!</p>
-            <button id="start-button">Oyunu Başlat</button>
+        <div class="board-container">
+            <div id="board"></div>
         </div>
+        
+        <div class="captured-pieces">
+            <div class="white-captured">
+                <h3>Beyazın Aldığı Taşlar</h3>
+                <div id="white-captured-pieces"></div>
+            </div>
+            <div class="black-captured">
+                <h3>Siyahın Aldığı Taşlar</h3>
+                <div id="black-captured-pieces"></div>
+            </div>
+        </div>
+        
+        <div id="game-status" class="game-status"></div>
     </div>
-    <script src="tetris.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
