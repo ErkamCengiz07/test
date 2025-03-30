@@ -7,12 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # GitHub Pages'e yazma izni ekleyelim
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages  # Dağıtım yapılacak dal
-        folder: .         # Dağıtılacak klasör (projenizin kök dizini)
+        folder: .  # Dağıtılacak klasör (projenizin kök dizini)
+        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub tarafından otomatik sağlanan token
+        clean: true  # Önceki dağıtımları temizle
